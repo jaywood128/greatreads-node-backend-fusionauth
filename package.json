@@ -1,0 +1,32 @@
+{
+  "name": "greatreads-node-backend-fusionauth",
+  "version": "1.0.0",
+  "description": "A Node.js + Express backend integrated with FusionAuth as the Authentication Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaywood128/greatreads-node-backend-fusionauth.git"
+  },
+  "author": "Johnathon Wood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaywood128/greatreads-node-backend-fusionauth/issues"
+  },
+  "homepage": "https://github.com/jaywood128/greatreads-node-backend-fusionauth#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-graphql": "^0.11.0",
+    "express-session": "^1.17.3",
+    "fusionauth-node-client": "^1.6.0",
+    "graphql": "^15.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
