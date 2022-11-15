@@ -1,0 +1,71 @@
+openapi: "3.0.3"
+info:
+  version: 1.41.0
+  title: FusionAuth API
+  license:
+    name: Apache2
+servers:
+  - url: http://localhost:9011
+security:
+  - ApiKeyAuth: [] 
+  
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - username
+        - email  
+        - password
+      properties:
+        email:
+          type: string
+          description: A user's email 
+        username:
+          type: string
+          description: A user's username
+        password:
+          type: string
+          description: A user's password
+        firstName:
+          type: string
+          description: A user's first name
+      example:
+        email: johnathon@fusionauth.io
+        username: Aegon
+        firstName: Aegon
+        lastName: Targaryen
+        password: password
+    UserRegistration:
+      type: object
+      required:
+        - username
+        - sendSetPasswordEmail
+        - skipVerification
+        - registration
+      properties:
+        user:
+          type: object
+          description: The user to register
+        sendSetPasswordEmail:
+          type: boolean
+          description: Send an email to setup 
+        skipVerification:
+          type: boolean
+          description: Should send verification email to register. Defaults to false.
+    UserLogin:
+      type: object
+      required:
+        - username
+        - password
+        - applicationId
+      properties:
+        user:
+          type: string
+          description: username
+        password:
+          type: string
+          description: The user's password 
+        applicationId:
+          type: string
+          description: The applicationId of the application you are logging into for FusionAuth.
